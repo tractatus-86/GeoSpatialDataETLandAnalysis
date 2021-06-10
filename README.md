@@ -1,5 +1,8 @@
 # GeoSpatialDataETLandAnalysis
 
+Please run on machine with at least 6GB hard drive space and 4GB memory.
+
+
 To Run Locally use Debian
 
     mkdir -p /opt/spark/
