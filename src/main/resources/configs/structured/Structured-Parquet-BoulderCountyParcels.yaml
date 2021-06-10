@@ -1,0 +1,8 @@
+project: BoulderCountyParcels
+sourcePath: Datalake/Sourced/BoulderCountyParcels
+sourceRelativePaths: []
+sourceFormat: shape
+sqlOperation: ""
+targetPath: Datalake/Structured/parquet/
+targetFormat: parquet
+targetWriteMode: Overwrite

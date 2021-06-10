@@ -1,0 +1,8 @@
+project: BoulderCountyParcels
+sourcePath: /home/tractatus/SourcingData/BoulderCountyParcels
+sourceRelativePaths: []
+dataType: shape
+sourceFormat: shape
+targetPath: /home/tractatus/StructuredData/
+targetFormat: parquet
+

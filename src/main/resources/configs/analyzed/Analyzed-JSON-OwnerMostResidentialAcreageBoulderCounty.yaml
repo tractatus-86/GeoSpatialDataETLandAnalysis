@@ -1,0 +1,20 @@
+project: OwnerMostResidentialAcreageBoulderCounty
+sourcePath: Datalake/Structured/parquet/
+sourceRelativePaths: [Land, Owner_Address, Account_Parcels, BoulderCountyParcels]
+sourceFormat: parquet
+sqlOperation:  "select
+                owner_name, account_type, SUM(GIS_acreage), SUM(st_area(st_transform(geometry,'epsg:4326','epsg:2876'))) as sqft,
+                SUM(st_area(st_transform(geometry,'epsg:4326','epsg:2876')))/43560 as acres
+                from (
+                        select * from
+                        owner_address join account_parcels
+                          on (owner_address.strap = account_parcels.strap)
+                        join BoulderCountyParcels
+                          on (BoulderCountyParcels.PARCEL_NO = account_parcels.Parcelno)
+                        join land
+                          on (land.strap = account_parcels.strap)
+                      ) a
+               where account_type = 'RESIDENTIAL' group by account_type, owner_name order by acres desc limit 10"
+targetPath: Datalake/Analyzed/json/
+targetFormat: json
+targetWriteMode: Overwrite

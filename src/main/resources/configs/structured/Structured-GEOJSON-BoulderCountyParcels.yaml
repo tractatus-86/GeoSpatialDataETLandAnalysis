@@ -1,0 +1,8 @@
+project: BoulderCountyParcels
+sourcePath: Datalake/Sourced/BoulderCountyParcels/
+sourceRelativePaths: []
+sourceFormat: shape
+sqlOperation: "select ST_AsGeoJSON(geometry), PARCEL_NO from BoulderCountyParcels"
+targetPath: Datalake/Structured/json/
+targetFormat: json
+targetWriteMode: Overwrite

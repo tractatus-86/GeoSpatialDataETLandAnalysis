@@ -1,0 +1,5 @@
+project: BoulderCountyParcels
+sourceRootPath: https://opendata.arcgis.com/api/v3/datasets/89ae49d4ddf246388ee5f5e952aa84db_0/downloads/data?format=shp&spatialRefId=4326
+sourceRelativePaths: []
+sourceFormat: BoulderCountyParcels.zip
+targetPath: /home/tractatus/SourcingData/

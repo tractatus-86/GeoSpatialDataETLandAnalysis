@@ -1,0 +1,9 @@
+project: ASR_PublicDataFiles
+sourcePath: Datalake/Sourced/ASR_PublicDataFiles/
+sourceRelativePaths: [Account_Parcels,Owner_Address,Buildings,Land,Permits,Sales,Tax_Area_Auth_Mill,Values,Business_Personal_Property]
+sourceFormat: csv
+sqlOperation: ""
+targetPath: Datalake/Structured/parquet/
+targetFormat: parquet
+targetWriteMode: Overwrite
+

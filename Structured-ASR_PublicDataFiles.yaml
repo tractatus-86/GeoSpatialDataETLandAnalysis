@@ -1,0 +1,8 @@
+project: ASR
+sourcePath: /home/tractatus/SourcingData/
+sourceRelativePaths: []
+dataType: csv
+sourceFormat: csv
+targetPath: /home/tractatus/StructuredData/
+targetFormat: parquet
+

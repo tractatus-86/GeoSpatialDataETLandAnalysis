@@ -1,0 +1,19 @@
+project: OwnerMostNonManufacturedPropertiesBoulderCounty
+sourcePath: Datalake/Structured/parquet/
+sourceRelativePaths: [Land, Owner_Address, Account_Parcels, BoulderCountyParcels]
+sourceFormat: parquet
+sqlOperation:  "select
+                owner_name, count(1) as num_properties
+                from (
+                        select * from
+                        owner_address join account_parcels
+                          on (owner_address.strap = account_parcels.strap)
+                        join BoulderCountyParcels
+                          on (BoulderCountyParcels.PARCEL_NO = account_parcels.Parcelno)
+                        join land
+                          on (land.strap = account_parcels.strap)
+                      ) a
+               where account_type != 'MANUFACTURED HOME' group by owner_name order by num_properties desc limit 10"
+targetPath: Datalake/Analyzed/json/
+targetFormat: json
+targetWriteMode: Overwrite
