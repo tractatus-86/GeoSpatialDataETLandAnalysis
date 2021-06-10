@@ -1,5 +1,0 @@
-project: ASR_PublicDataFiles
-sourceRootPath: https://assessor.boco.solutions/ASR_PublicDataFiles/ 
-sourceRelativePaths: [Account_Parcels,Owner_Address,Buildings,Land,Permits,Sales,Tax_Area_Auth_Mill,Values,Business_Personal_Property]
-sourceFormat: csv
-targetPath: /home/tractatus/SourcingData/
